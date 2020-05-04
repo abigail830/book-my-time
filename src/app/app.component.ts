@@ -1,9 +1,12 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 import { FullCalendarComponent } from '@fullcalendar/angular';
+import bootstrapPlugin from '@fullcalendar/bootstrap';
 import { EventInput } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGrigPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import listPlugin from '@fullcalendar/list';
+
 
 @Component({
   selector: 'app-root',
@@ -16,7 +19,16 @@ export class AppComponent {
 
   // calendarVisible = true;
   // calendarWeekends = true;
-  calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin];
+  titleFormat = {
+    month: '2-digit',
+    year: 'numeric',
+  };
+  buttonText = {
+    month: '月',
+    week: '周',
+    day: '日'
+  };
+  calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin, listPlugin, bootstrapPlugin];
   calendarEvents: EventInput[] = [
     { title: 'Event Now', start: new Date() }
   ];
@@ -27,7 +39,7 @@ export class AppComponent {
         title: 'New Event',
         start: arg.date,
         allDay: arg.allDay
-      })
+      });
     }
   }
 }

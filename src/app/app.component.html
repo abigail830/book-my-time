@@ -1,7 +1,8 @@
 
 <div class='app'>
-  <div>
-
+  <div class='header'>
+    <h3>Book-My-Time</h3>
+    <p>- 人生天地之间，若白驹之过隙，忽然而已 -</p>
   </div>
 
   <div class='app-calendar'>
@@ -9,16 +10,21 @@
       #calendar
       defaultView="dayGridMonth"
       [header]="{
-        left: 'prev,next,today',
+        left: 'dayGridMonth,timeGridWeek,timeGridDay',
         center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        right: 'prev,next'
       }"
-      [height]="100%"
+      [titleFormat]="titleFormat"
+      [height]="450"
       [plugins]="calendarPlugins"
       [weekends]="true"
       [events]="calendarEvents"
       (dateClick)="handleDateClick($event)"
+      [buttonText]="buttonText"
     ></full-calendar>
+  </div>
+  <div class="bottom">
+    <button class="raised-btn">添加预约</button>
   </div>
 
 </div>

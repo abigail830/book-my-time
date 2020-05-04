@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { MaterialModule } from './common/MaterialModule';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FullCalendarModule
+    FullCalendarModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

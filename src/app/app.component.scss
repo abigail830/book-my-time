@@ -6,14 +6,20 @@
     color: #ffffff;
     background-color: #3AAFAE;
     text-align: center;
-    padding: 18px 10px;
+    padding: 12px 10px;
 }
 .header > p {
     color: #E2E6EB;
 }
+.btn_group{
+    text-align: center;
+    width: 100%;
+}   
+
 .app-calendar {
     background-color: #ffffff;
     margin: 15px;
+    margin-top:20px;
     font-size: small;
 }
 .bottom  {
@@ -30,4 +36,8 @@
 
 .raised-btn:hover {
     background-color: #63B7AF;
+}
+.copyright {
+    text-align: center;
+    color: #BBDED6;
 }

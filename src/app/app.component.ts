@@ -1,4 +1,4 @@
-import { Component, ViewChild} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FullCalendarComponent } from '@fullcalendar/angular';
 import bootstrapPlugin from '@fullcalendar/bootstrap';
 import { EventInput } from '@fullcalendar/core';
@@ -30,7 +30,15 @@ export class AppComponent {
   };
   calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin, listPlugin, bootstrapPlugin];
   calendarEvents: EventInput[] = [
-    { title: 'Event Now', start: new Date() }
+    {
+      title: 'Event Now',
+      start: new Date()
+    },
+    {
+      title: 'My Event',
+      start: new Date(),
+      description: 'This is a cool event'
+    }
   ];
 
   handleDateClick(arg) {

@@ -1,0 +1,28 @@
+<div class="login">
+    <div>
+        <h4>请先登陆：</h4>
+    </div>
+    <div *ngIf="alertMessage.length != 0" class='alert'>
+        ERROR: {{alertMessage}}
+    </div>
+    <form #loginForm="ngForm" class="login-form">
+        <mat-form-field appearance="outline">
+            <mat-label>UserName</mat-label>
+            <input matInput placeholder="username" required name="username" [(ngModel)]="userName">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" required name="password" [(ngModel)]="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="submit">
+            <button class="submit-btn" type="submit" 
+            [disabled]="!loginForm.form.valid" (click)="onSubmit()"> 登陆 </button>
+        </div>
+    </form>
+
+</div>

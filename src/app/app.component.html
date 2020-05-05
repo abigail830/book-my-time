@@ -1,44 +1,6 @@
 
 <div class='app'>
-  <div class='header'>
-    <h3>Book-My-Time</h3>
-    <p>- 人生天地之间，若白驹之过隙，忽然而已 -</p>
-  </div>
-
-  <div>
-    <mat-tab-group mat-align-tabs="center">
-      <mat-tab label="我的时间表">
-        <div class='app-calendar'>
-          <full-calendar
-            #calendar
-            defaultView="dayGridMonth"
-            [header]="{
-              left: 'dayGridMonth,timeGridWeek,timeGridDay',
-              center: 'title',
-              right: 'prev,next'
-            }"
-            [titleFormat]="titleFormat"
-            [height]="420"
-            [plugins]="calendarPlugins"
-            [weekends]="true"
-            [events]="calendarEvents"
-            (dateClick)="handleDateClick($event)"
-            [buttonText]="buttonText"
-          ></full-calendar>
-        </div>
-      </mat-tab>
-      <mat-tab label="添加预约">Content 2</mat-tab>
-    </mat-tab-group>
-  </div>
-
-
-  <div class="copyright">
-    <p>- Copyright reserved by SaraQian -</p>
-  </div>
-
-  <!-- <div class="bottom">
-    <button class="raised-btn">添加预约</button>
-  </div> -->
-
-
+  <app-header></app-header>
+  <app-main></app-main>
+  <app-footer></app-footer>
 </div>

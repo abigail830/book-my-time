@@ -29,7 +29,6 @@
     "@fullcalendar/list": "^4.4.0",
     "@fullcalendar/timegrid": "^4.4.0",
     "jquery": "^3.5.0",
-    "minimist": "0.2.1",
     "moment": "^2.25.2",
     "rxjs": "^6.5.5",
     "tslib": "^1.9.0",
@@ -55,5 +54,8 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
+  },
+  "resolutions": {
+    "minimist": "^1.2.5"
   }
 }

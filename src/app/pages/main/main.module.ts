@@ -8,13 +8,15 @@ import { MaterialModule } from 'src/app/common/MaterialModule';
 import { ViewComponent } from '../view/view.component';
 import { LoginComponent } from '../login/login.component';
 import { FormsModule } from '@angular/forms';
+import { DayDetailComponent } from 'src/app/components/day-detail/day-detail.component';
 
 
 @NgModule({
   declarations: [
     MainComponent,
     LoginComponent,
-    ViewComponent
+    ViewComponent,
+    DayDetailComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,9 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     CommonModule
+  ],
+  entryComponents: [
+    DayDetailComponent
   ]
 })
 export class MainModule { }

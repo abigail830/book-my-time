@@ -13,6 +13,8 @@
       [weekends]="true"
       [events]="calendarEvents"
       (dateClick)="handleDateClick($event)"
+      (eventClick)="handleEventClick($event)"
       [buttonText]="buttonText"
+      [editable]="false"
     ></full-calendar>
   </div>

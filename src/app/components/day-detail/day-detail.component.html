@@ -1,0 +1,14 @@
+<div class="dialog">
+    <h1 mat-dialog-title>{{title}}</h1>
+    <mat-divider></mat-divider>
+
+    <div mat-dialog-content class="content">
+        <h4>Start</h4>
+        <p>{{startTime}}</p>
+        <h4>Content</h4>
+        <p>{{content}}</p>
+    </div>
+    <div mat-dialog-actions class="btn_ok">
+        <button mat-raised-button (click)="onOK()" cdkFocusInitial>OK, 知道了</button>
+    </div>
+</div>

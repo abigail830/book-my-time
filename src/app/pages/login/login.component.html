@@ -1,4 +1,4 @@
-<div class="login">
+<div class="login" *ngIf='!isUserLogined'>
     <div>
         <h4>请先登陆：</h4>
     </div>
@@ -24,5 +24,12 @@
             [disabled]="!loginForm.form.valid" (click)="onSubmit()"> 登陆 </button>
         </div>
     </form>
+</div>
+<div *ngIf='isUserLogined' class="logoff">
+    <h4 class="hello">Hello {{userName}}</h4>
+    <p>Welcome to book my time</p>
+    <br/>
+    <button class="submit-btn" (click)="onLogoff()">登出</button>
+    <br/>
 
 </div>

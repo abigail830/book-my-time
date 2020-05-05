@@ -21,10 +21,14 @@ import { FormsModule } from '@angular/forms';
     MainRoutingModule,
     MaterialModule,
     CalendarModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   exports: [
     MainComponent
+  ],
+  providers: [
+    CommonModule
   ]
 })
 export class MainModule { }

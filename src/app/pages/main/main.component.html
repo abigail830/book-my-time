@@ -1,11 +1,11 @@
 <div>
     <mat-tab-group mat-align-tabs="center">
-        <mat-tab label="登陆">
+        <mat-tab label="Welcome">
             <app-login></app-login>
         </mat-tab>
-        <mat-tab label="我的时间表">
+        <mat-tab label="My-Time" *ngIf='isUserLogined'>
             <app-view></app-view>
         </mat-tab>
-        <mat-tab label="添加预约">Content 2</mat-tab>
+        <mat-tab label="Booking" *ngIf='isUserLogined'>Content 2</mat-tab>
     </mat-tab-group>
 </div>

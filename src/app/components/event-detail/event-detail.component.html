@@ -1,0 +1,21 @@
+<div class="dialog">
+    <h1 mat-dialog-title>{{title}}</h1>
+    <mat-divider></mat-divider>
+
+    <form #loginForm="ngForm" class="login-form">
+        <mat-form-field appearance="outline">
+            <mat-label>Start</mat-label>
+            <input matInput placeholder="start time" required name="start" [(ngModel)]="content.start">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="title" required name="title" [(ngModel)]="content.title">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+        <div class="submit">
+            <button class="submit-btn" type="submit" 
+            [disabled]="!loginForm.form.valid" (click)="onSubmit()"> 确定预约 </button>
+        </div>
+    </form>
+</div>

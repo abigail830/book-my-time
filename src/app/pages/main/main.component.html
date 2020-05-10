@@ -3,9 +3,8 @@
         <mat-tab label="Welcome">
             <app-login></app-login>
         </mat-tab>
-        <mat-tab label="My-Time" *ngIf='isUserLogined'>
+        <mat-tab label="Book-My-Time" *ngIf='isUserLogined'>
             <app-view></app-view>
         </mat-tab>
-        <mat-tab label="Booking" *ngIf='isUserLogined'>Content 2</mat-tab>
     </mat-tab-group>
 </div>

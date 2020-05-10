@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { UserStorage } from 'src/app/models/user-storage';
+import { UserStorage } from 'src/app/service/user-storage';
 import { Subscription } from 'rxjs';
 
 @Component({

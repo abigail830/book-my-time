@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { UserStorage } from 'src/app/models/user-storage';
+import { UserStorage } from 'src/app/service/user-storage';
 import { Subscription } from 'rxjs';
+import { UserServiceService } from 'src/app/service/user-service.service';
+import { UserDTO } from 'src/app/models/UserDTO';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +17,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   password = '';
   isUserLogined = false;
   subscription: Subscription;
+  response = '';
 
-  constructor(public userStorage: UserStorage) {
+  constructor(private userStorage: UserStorage, private userService: UserServiceService) {
     if (userStorage.isUserSignon()) {
       this.isUserLogined = true;
       this.userName = userStorage.getUserName();
@@ -31,11 +34,19 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+
   onSubmit() {
-    if (this.userName === 'SaraQian' && this.password === '123456') {
-      this.userStorage.storeUserStatus(this.userName);
-    }
+    const user: UserDTO = { userName: this.userName, password: this.password };
+    console.log(JSON.stringify(user));
+
+    this.userService.login(user).subscribe(response => {
+      this.response = response;
+      console.log('Successful login');
+    }, error => {
+      console.log(error);
+    });
   }
+
   onLogoff() {
     this.userStorage.cleanupStorage();
   }

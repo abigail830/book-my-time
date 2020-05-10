@@ -8,6 +8,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 import { MatDialog } from '@angular/material/dialog';
 import { DayDetailComponent } from 'src/app/components/day-detail/day-detail.component';
+import { EventDetailComponent } from 'src/app/components/event-detail/event-detail.component';
 
 @Component({
   selector: 'app-view',
@@ -56,13 +57,23 @@ export class ViewComponent implements OnInit {
     //   });
     // }
     console.log(arg.dateStr);
+    const dialogRef = this.dialog.open(EventDetailComponent, {
+      data: { start: arg.date },
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      width: '300px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
   }
 
   handleEventClick(info) {
     const dialogRef = this.dialog.open(DayDetailComponent, {
       data: { event: info.event },
-      maxWidth: '100vw',
-      maxHeight: '100vh',
+      maxWidth: '110vw',
+      maxHeight: '150vh',
       width: '300px',
     });
     dialogRef.afterClosed().subscribe(result => {

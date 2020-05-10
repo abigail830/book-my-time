@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
@@ -9,6 +8,9 @@ import { ViewComponent } from '../view/view.component';
 import { LoginComponent } from '../login/login.component';
 import { FormsModule } from '@angular/forms';
 import { DayDetailComponent } from 'src/app/components/day-detail/day-detail.component';
+import { EventDetailComponent } from 'src/app/components/event-detail/event-detail.component';
+import { BaseModule } from 'src/app/common/BaseModule';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { DayDetailComponent } from 'src/app/components/day-detail/day-detail.com
     MainComponent,
     LoginComponent,
     ViewComponent,
-    DayDetailComponent
+    DayDetailComponent,
+    EventDetailComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,7 @@ import { DayDetailComponent } from 'src/app/components/day-detail/day-detail.com
     MaterialModule,
     CalendarModule,
     FormsModule,
-    CommonModule
+    BaseModule
   ],
   exports: [
     MainComponent
@@ -33,7 +36,8 @@ import { DayDetailComponent } from 'src/app/components/day-detail/day-detail.com
     CommonModule
   ],
   entryComponents: [
-    DayDetailComponent
+    DayDetailComponent,
+    EventDetailComponent
   ]
 })
 export class MainModule { }

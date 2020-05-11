@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { GenericDialogData } from 'src/app/models/GenericDialogData';
+import EventApi from '@fullcalendar/core/api/EventApi';
 
 @Component({
   selector: 'app-day-detail',
@@ -8,10 +8,11 @@ import { GenericDialogData } from 'src/app/models/GenericDialogData';
   styleUrls: ['./day-detail.component.scss']
 })
 export class DayDetailComponent implements OnInit {
-  title = '预约详情';
-  content = '';
-  event: GenericDialogData;
+  title = '';
+  description = '';
+  event: EventApi;
   startTime;
+  endTime;
 
   constructor(public dialogRef: MatDialogRef<DayDetailComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -19,8 +20,11 @@ export class DayDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.content = this.event.title;
+    console.log(this.event);
+    this.title = '预约: ' + this.event.title;
     this.startTime = new Date(this.event.start).toLocaleString();
+    this.endTime = new Date(this.event.end).toLocaleString();
+    this.description = this.event.extendedProps.description;
   }
 
   onOK() {

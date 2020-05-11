@@ -3,10 +3,25 @@
     <mat-divider></mat-divider>
 
     <div mat-dialog-content class="content">
-        <h4>Start</h4>
-        <p>{{startTime}}</p>
-        <h4>Content</h4>
-        <p>{{content}}</p>
+        <mat-form-field class="full_width">
+            <mat-label>Start</mat-label>
+            <input matInput placeholder="Start Time" value="{{startTime}}">
+        </mat-form-field>
+
+        <mat-form-field class="full_width">
+            <mat-label>End</mat-label>
+            <input matInput placeholder="End Time" value="{{endTime}}">
+        </mat-form-field>
+        
+        <mat-form-field  class="full_width">
+            <mat-label>Description</mat-label>
+            <textarea matInput [value]="description"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="5">
+            </textarea>
+        </mat-form-field>
     </div>
     <div mat-dialog-actions class="btn_ok">
         <button mat-raised-button (click)="onOK()" cdkFocusInitial>OK, 知道了</button>

@@ -34,13 +34,22 @@ export class ViewComponent implements OnInit {
   calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin, listPlugin, bootstrapPlugin];
   calendarEvents: EventInput[] = [
     {
-      title: 'Event Now',
-      start: new Date()
+      title: 'Event Now 1',
+      start: new Date(),
+      allDay: true,
     },
     {
-      title: 'My Event',
-      start: new Date(1),
+      title: 'My Event 2',
+      start: '2020-05-17T10:30:00',
+      end: '2020-05-17T10:45:00',
+      allDay: false,
       description: 'This is a cool event'
+    },
+    {
+      title: 'Click for Google',
+      url: 'http://google.com/',
+      start: '2020-05-20',
+      allDay: true
     }
   ];
   constructor(public dialog: MatDialog) { }
@@ -70,11 +79,12 @@ export class ViewComponent implements OnInit {
   }
 
   handleEventClick(info) {
+    console.log(info.event);
     const dialogRef = this.dialog.open(DayDetailComponent, {
       data: { event: info.event },
       maxWidth: '110vw',
-      maxHeight: '150vh',
-      width: '300px',
+      maxHeight: '600px',
+      width: '320px',
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');

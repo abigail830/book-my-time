@@ -42,8 +42,10 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.userService.login(user).subscribe(response => {
       this.response = response;
       console.log('Successful login');
+      this.userStorage.storeUserStatus(this.userName);
     }, error => {
       console.log(error);
+      this.alertMessage = error;
     });
   }
 
